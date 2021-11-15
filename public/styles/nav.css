@@ -9,19 +9,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 3;
 }
 
 .nav-left {
   font-family: 'Bungee', sans-serif;
   font-size: 1.5em;
-  
 }
-
 .nav-right {
   font-family: 'Source Sans Pro';
   font-size: 0.85em;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+header {
+  z-index: 4;
+  display: flex;
 }
