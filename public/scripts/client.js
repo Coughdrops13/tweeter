@@ -1,3 +1,4 @@
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -20,7 +21,8 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -28,8 +30,8 @@ const data = [
   }
 ]
 
-$(document).ready(function() {  // makes sure that none of the js runs before the dom is rendered
-  const createTweetElement = function(tweet) {  // function used to create article element that contains new tweets
+$(document).ready(function () {  // makes sure that none of the js runs before the dom is rendered
+  const createTweetElement = function (tweet) {  // function used to create article element that contains new tweets
     const newTweetArticle = $(
       `<article class="tweet">
         <header>
@@ -54,12 +56,12 @@ $(document).ready(function() {  // makes sure that none of the js runs before th
     );
     return newTweetArticle;
   }
-  
-  const renderTweets = function(data) {
-    $(data).each(function() {
+
+  const renderTweets = function (data) {
+    $(data).each(function () {
       const $tweet = createTweetElement(this);
       $('.posted-tweets').append($tweet);
-    }) 
+    })
     // for (const tweet of data) {
     //   const $tweet = createTweetElement(tweet);
     //   $('.posted-tweets').append($tweet);
@@ -67,4 +69,18 @@ $(document).ready(function() {  // makes sure that none of the js runs before th
   }
 
   renderTweets(data);
+
+  $(function () {
+    const form = $('#tweet-form');
+    form.submit(function (event) {
+      event.preventDefault();
+      const serialized = $('#tweet-form').serialize();
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: serialized,
+      })
+    })
+  })
+
 });

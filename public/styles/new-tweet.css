@@ -23,7 +23,7 @@
   font-family: "Bungee", sans-serif;
 }
 
-button {
+.submit-tweet{
   display: flex;
   color: white;
   background-color: #4056A1;
