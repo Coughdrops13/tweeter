@@ -96,7 +96,16 @@ article footer {
   margin-left: 1.5em;
   margin-right: 1.5em;
   margin-bottom: 1em;
+  word-wrap: break-all;
 }
+
+.tweet-content p {
+  display: inline-block;
+  width: 100%;
+  height: 1.5em;
+  overflow-wrap: break-word;
+}
+
 .tweet-time {
   display: flex;
   margin-left: 1em;
@@ -119,4 +128,21 @@ article footer {
 
 .icon:hover{
   color: #fcd743;
+}
+
+#error {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: flex-start;
+  height: 1.5em;
+  border: 4px solid red;
+}
+
+#error p {
+  display: flex;
+  align-items: center;
+  color: red;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
