@@ -1,11 +1,10 @@
-// This is 140 characters long dsfgsdfg sdfg sgs cr gercgwercg wergc werg cwer gcwergcwer gcwer gcw ercgw erwfc rgwerg wergcwe rgcwer ce ecgr e
-
 // makes sure that none of the js runs before the dom is rendered
 $(document).ready(function () {  
   $('#error').hide(); // initially hide error since nothing is wrong yet
 
   // function used to create article element that contains new tweets
   const createTweetElement = function (tweet) {  
+
 
     // function to avoid cross-site scripting
     const escape = function(str) {
@@ -15,6 +14,8 @@ $(document).ready(function () {
     };
     const safeContent = escape(tweet.content.text) // This is now a safe string to put in our new tweets
     
+
+
     const newTweetArticle = $( // This is the html for a new tweet
       `<article class="tweet">
         <header>
@@ -42,6 +43,9 @@ $(document).ready(function () {
     return newTweetArticle;
   }
 
+
+
+
   const renderTweets = function (data) {// Pulls all tweets from a tweet array
                                         // and put them in the index.html so that they 
                                         // are rendered
@@ -50,6 +54,9 @@ $(document).ready(function () {
       $('.posted-tweets').prepend($tweet);
     })
   }
+
+
+
 
   const loadTweets = function() { // calls render tweets after getting tweet data from /tweets
     $.ajax({
@@ -60,6 +67,9 @@ $(document).ready(function () {
       renderTweets(tweets);
     })
   };
+
+
+
   
   $(function () { // on form submission, if valid tweet, this funciton calls loadTweets() 
                   // which calls renderTweets() which calls createTweetElement()
@@ -97,6 +107,7 @@ $(document).ready(function () {
         $('#error').slideUp();
         //clear text field
         $('#tweet-text').val("");
+        $('.counter').text(140);
         loadTweets();
       })
       .catch((err)  => { // just in case something unpredictable happens
@@ -105,6 +116,9 @@ $(document).ready(function () {
     })
   })
   
+
+
+
 
   loadTweets(); // loads tweets that already exist at /tweets before submitting 
                 // the form prepends more

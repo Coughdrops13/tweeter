@@ -9,5 +9,5 @@ $(document).ready(function() {
     }
     output.text(length);
   };
-  $('#tweet-text').on('input', callback);
+  $('#tweet-text').on('input', callback); 
 });
