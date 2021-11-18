@@ -1,8 +1,9 @@
 .new-tweet {
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: column;
   justify-content: center;
+  margin-left: 1em;
 }
 
 #tweet-text {
@@ -12,6 +13,7 @@
   background-color: #f4f1ec;
   border-color: #f4f1ec;
   margin-bottom: 0.5em;
+  resize: none;
 }
 
 .form-bottom {

@@ -72,12 +72,15 @@ $(document).ready(function () {
                                                                 // representing 1 space (other characters are also changed),
                                                                 // so to check a tweet's length the unserialized text must be 
                                                                 // evaluated
-      if(textLengthTester.length > 140) { // handles cases of too many characters input
+                                                                
+      // handles cases of too many characters input
+      if(textLengthTester.length > 140) { 
         $('#error p').text('Your tweet is too long');
         $('#error').show().slideDown();
         return;
       }
-      if(textLengthTester.length === 0) { // handles case of no characters input
+      // handles case of no characters input
+      if(textLengthTester.length === 0) { 
         $('#error p').text(`!You must tweet at least one character!`);
         $('#error').slideDown().show(); 
         return;
