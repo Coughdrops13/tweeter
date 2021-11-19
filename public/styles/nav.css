@@ -26,8 +26,26 @@ nav {
   align-items: center;
 }
 
-.double-down {
+.nav-right button {
+  background-color: #4056A1;
+  border-width: 0px;
+}
+
+.red-arrows {
   color: red;
+}
+
+.bounce2 {
+  animation: bounce2 2s ease infinite;
+}
+@keyframes bounce2 {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-7px);}
+  60% {transform: translateY(-2px);}
+}
+
+.red-arrows:hover {
+  color: white;
 }
 
 header {

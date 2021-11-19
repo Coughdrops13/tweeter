@@ -1,7 +1,7 @@
 // makes sure that none of the js runs before the dom is rendered
 $(document).ready(function () {  
   $('#error').hide(); // initially hide error since nothing is wrong yet
-
+  $('section.new-tweet').hide();
   // function used to create article element that contains new tweets
   const createTweetElement = function (tweet) {  
 
@@ -113,6 +113,14 @@ $(document).ready(function () {
       .catch((err)  => { // just in case something unpredictable happens
         return alert(err, 'something went wrong');
       })
+    })
+  })
+
+  $(function() {
+    const $button = $(".nav-right button");
+    $button.click(function(event) {
+      event.preventDefault();
+      $("section.new-tweet").slideDown().show();
     })
   })
   
