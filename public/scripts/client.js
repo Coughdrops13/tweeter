@@ -116,15 +116,33 @@ $(document).ready(function () {
     })
   })
 
-  $(function() {
+ const newTweetNavButton = $(function() {
     const $button = $(".nav-right button");
     $button.click(function(event) {
       event.preventDefault();
       $("section.new-tweet").slideDown().show();
     })
   })
-  
 
+
+  const bottomButton = $(function() {
+    const $button = $("#bottom-button");
+    $button.click(function(event) {
+      event.preventDefault();
+      newTweetNavButton();
+    })
+  })
+ 
+  window.onscroll = function() {scrollFunction()};
+
+  $(function scrollFunction() {
+    const $button = $("#bottom-button"); 
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      $button.style.display = "block";
+    } else {
+      $button.style.display = "none";
+    }
+  })
 
 
 
